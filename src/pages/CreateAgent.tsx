@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"; // For redirecting users
 // Declare global window.ethereum for TypeScript
 declare global {
   interface Window {
-    ethereum?: any;
+    ethereum: any;
   }
 }
 
@@ -81,9 +81,7 @@ export default function CreateAgent() {
       if (!window.ethereum) {
         throw new Error("MetaMask is required to use this feature.");
       }
-      if (!account) {
-        throw new Error("❌ Wallet not connected.");
-      }
+
       if (!ethers.utils.isAddress(inputAgentAddress)) {
         throw new Error("❌ Invalid Ethereum address.");
       }
@@ -103,9 +101,6 @@ export default function CreateAgent() {
 
       setAgentAddress(inputAgentAddress);
       setSuccessMessage("🎉 Agent successfully connected!");
-
-      // Navigate to chatbot page after successful connection
-      navigate("/chatbot");
     } catch (err: any) {
       console.error("Error connecting agent:", err);
       setError(err.message || "❌ Failed to connect agent.");
