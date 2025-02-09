@@ -155,7 +155,7 @@ const ChatbotGovernace = () => {
               Create Proposal
             </button>
           </div>
-          <button
+{/*           <button
             onClick={fetchProposals}
             className={`p-3 rounded mt-5 shadow-lg transition ${
               isButtonDisabled
@@ -165,7 +165,7 @@ const ChatbotGovernace = () => {
             disabled={isButtonDisabled}
           >
             Fetch Proposals
-          </button>
+          </button> */}
           <ul className="mt-5 space-y-3">
             {proposals.map((proposal, index) => (
               <li key={index} className="p-4 border rounded-lg bg-gray-800">
