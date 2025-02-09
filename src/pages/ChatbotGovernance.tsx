@@ -1,4 +1,10 @@
 import { useState, useEffect } from "react";
+
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
 import { ethers } from "ethers";
 import governorAbi from "../utils/AiDaoGovernor.json";
 import tokenAbi from "../utils/AiDaoToken.json";
